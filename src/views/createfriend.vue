@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Nomor Telp</label>
+          <label for="inputPassword4" class="form-label">Nomor Telepon</label>
           <input
             type="number"
             class="form-control"
