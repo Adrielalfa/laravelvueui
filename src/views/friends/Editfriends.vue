@@ -64,27 +64,30 @@ export default {
 
     const router = useRouter();
 
-    const route = useRouter()
+    const route = useRouter();
 
-    onMounted(() =>{
-      axios.get('http://pia.labirin.co.id/api/friends/${route.params.id}')
-      .then(response => {
-        console.log(response.data.data.nama)
+    onMounted(() => {
+      axios
+        .get("http://127.0.0.1:8000/api/friends/${route.params.id}")
+        .then((response) => {
+          console.log(response.data.data.nama);
 
-        friend.nama = response.data.data.nama
-        friend.no_tlp = response.data.data.no_tlp
-        friend.alamat = response.data.data.alamat
-      }).catch(error =>{
-        console.log(error.response.data)
-      })
-    })
+          friend.nama = response.data.data.nama;
+          friend.no_tlp = response.data.data.no_tlp;
+          friend.alamat = response.data.data.alamat;
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+    });
 
     function update() {
       let nama = friend.nama;
       let no_tlp = friend.no_tlp;
       let alamat = friend.alamat;
 
-      axios.put('http://pia.labirin.co.id/api/friends/${route.params.id}', {
+      axios
+        .put("http://127.0.0.1:8000/api/friends/${route.params.id}", {
           nama: nama,
           no_tlp: no_tlp,
           alamat: alamat,
@@ -95,7 +98,7 @@ export default {
           });
         })
         .catch((error) => {
-          validation.value = error.response.data
+          validation.value = error.response.data;
         });
     }
     return {
@@ -103,7 +106,7 @@ export default {
       validation,
       router,
       update,
-      route
+      route,
     };
   },
 };
