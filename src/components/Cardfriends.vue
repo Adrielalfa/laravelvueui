@@ -8,6 +8,9 @@
           <p class="card-text">
             {{ friend.alamat }}
           </p>
+           <p class="card-text">
+            {{ friend.groups.name }}
+          </p>
         </div>
         <div class="card-footer text-muted">
           <router-link

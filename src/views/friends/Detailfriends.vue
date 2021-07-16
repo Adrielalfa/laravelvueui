@@ -42,9 +42,11 @@ export default {
         .catch((error) => {
           console.log(error.response.data);
         });
+
+        
     });
 
-    function friendDelete(id) {
+    function friendDelete() {
       axios
         .delete("http://127.0.0.1:8000/api/friends/${id}")
         .then(() => {

@@ -40,6 +40,14 @@
             {{ validation.alamat[0] }}
           </div>
         </div>
+          <div class="col-6">
+          <label for="inputAddress" class="form-label">Group</label>
+         <select class="form-select" aria-label="Default select example" v-model="friend.groups_id">
+  
+        <option v-for ="group in groups" :key="group.id" :value="group.id">{{group.name}}</option>
+
+</select>
+</div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Edit</button>
         </div>
